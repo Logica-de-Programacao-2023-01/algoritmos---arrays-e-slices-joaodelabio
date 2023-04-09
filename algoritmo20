@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n int
+	fmt.Println("Digite o tamanho do array:")
+	fmt.Scan(&n)
+
+	array := make([]int, n)
+
+	fmt.Println("Digite os elementos do array:")
+	for i := 0; i < n; i++ {
+		fmt.Scan(&array[i])
+	}
+
+	ordenado := true
+	for i := 0; i < n-1; i++ {
+		if array[i] > array[i+1] {
+			ordenado = false
+			break
+		}
+	}
+
+	if ordenado {
+		fmt.Println("O array está em ordem crescente.")
+	} else {
+		fmt.Println("O array não está em ordem crescente.")
+	}
+}

@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+	array := [3][2]int{}
+	
+	for i := 0; i < len(array); i++ {
+		for j := 0; j < len(array[i]); j++ {
+			fmt.Printf("Informe o valor do elemento [%d][%d]: ", i, j)
+			fmt.Scan(&array[i][j])
+		}
+	}
+	
+	fmt.Println("Array:")
+	for i := 0; i < len(array); i++ {
+		fmt.Println(array[i])
+	}
+}

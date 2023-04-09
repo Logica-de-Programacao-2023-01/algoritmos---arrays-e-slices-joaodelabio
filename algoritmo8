@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+	slice := []string{"macaco", "banana", "uva", "manga", "praia", "fogo", "cadeira", "arroz"}
+
+	var valor string
+	fmt.Print("Digite um valor para ser removido: ")
+	fmt.Scan(&valor)
+
+	for i := 0; i < len(slice); i++ {
+		if slice[i] == valor {
+			slice = append(slice[:i], slice[i+1:]...)
+			i--
+		}
+	}
+
+	fmt.Println(slice)
+}

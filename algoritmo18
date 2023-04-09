@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func isPrime(n int) bool {
+	if n <= 1 {
+		return false
+	}
+	for i := 2; i*i <= n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	var n int
+	fmt.Print("Digite números primos: ")
+	fmt.Scan(&n)
+
+	primos := make([]int, 0, n)
+
+	i := 2
+	for len(primos) < n {
+		if isPrime(i) {
+			primos = append(primos, i)
+		}
+		i++
+	}
+
+	fmt.Println(primos)
+}
